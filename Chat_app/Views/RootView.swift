@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RootView.swift
 //  Chat_app
 //
 //  Created by Corrigan, John on 1/25/23.
@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct RootView: View {
+    @State var selectedTab: Tabs = .contacts
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
+            
             Text("Hello, world!")
+                .padding()
+                .font(Font.chatHeading)
+            Spacer()
+            CustomTabBar(selectedTab: $selectedTab)
+            
         }
-        .padding()
-        .font(Font.caption)
+      
     }
     //init(){
     //    for family in UIFont.familyNames{
