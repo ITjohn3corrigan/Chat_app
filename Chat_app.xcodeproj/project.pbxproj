@@ -32,6 +32,10 @@
 		744C84D6298701DD00869ED0 /* SyncContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744C84D5298701DD00869ED0 /* SyncContactsView.swift */; };
 		744C84D829870D4900869ED0 /* OnboardingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744C84D729870D4900869ED0 /* OnboardingButtonStyle.swift */; };
 		748E14302989F99A0045A28C /* CreateProfileTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E142F2989F99A0045A28C /* CreateProfileTextfieldStyle.swift */; };
+		748E1432298B34A00045A28C /* ConrtactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E1431298B34A00045A28C /* ConrtactsViewModel.swift */; };
+		748E1434298CA0140045A28C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E1433298CA0140045A28C /* User.swift */; };
+		748E1436298DE8F00045A28C /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E1435298DE8F00045A28C /* DatabaseService.swift */; };
+		748E1438298DF6620045A28C /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E1437298DF6620045A28C /* TextHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		744C84D5298701DD00869ED0 /* SyncContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactsView.swift; sourceTree = "<group>"; };
 		744C84D729870D4900869ED0 /* OnboardingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonStyle.swift; sourceTree = "<group>"; };
 		748E142F2989F99A0045A28C /* CreateProfileTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTextfieldStyle.swift; sourceTree = "<group>"; };
+		748E1431298B34A00045A28C /* ConrtactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConrtactsViewModel.swift; sourceTree = "<group>"; };
+		748E1433298CA0140045A28C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		748E1435298DE8F00045A28C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		748E1437298DF6620045A28C /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		741A87DF2982004200DF3104 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				748E1433298CA0140045A28C /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				744C84C72986F49900869ED0 /* AuthViewModel.swift */,
+				748E1431298B34A00045A28C /* ConrtactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +161,7 @@
 		741A87E22982007400DF3104 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				748E1435298DE8F00045A28C /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 				741A87EF29835F8900DF3104 /* Fonts.swift */,
 				744C84D729870D4900869ED0 /* OnboardingButtonStyle.swift */,
 				748E142F2989F99A0045A28C /* CreateProfileTextfieldStyle.swift */,
+				748E1437298DF6620045A28C /* TextHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,12 +289,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748E1436298DE8F00045A28C /* DatabaseService.swift in Sources */,
+				748E1432298B34A00045A28C /* ConrtactsViewModel.swift in Sources */,
 				748E14302989F99A0045A28C /* CreateProfileTextfieldStyle.swift in Sources */,
 				744C84D6298701DD00869ED0 /* SyncContactsView.swift in Sources */,
+				748E1438298DF6620045A28C /* TextHelper.swift in Sources */,
 				744C84C52986C1DA00869ED0 /* AppDelegate.swift in Sources */,
 				744C84CC2986FDD000869ED0 /* OnboardingContainerView.swift in Sources */,
 				744C84B429855BD800869ED0 /* CustomTabBar.swift in Sources */,
 				744C84D829870D4900869ED0 /* OnboardingButtonStyle.swift in Sources */,
+				748E1434298CA0140045A28C /* User.swift in Sources */,
 				741A87D42982003900DF3104 /* RootView.swift in Sources */,
 				744C84CE2987014E00869ED0 /* WelcomeView.swift in Sources */,
 				744C84C82986F49A00869ED0 /* AuthViewModel.swift in Sources */,
