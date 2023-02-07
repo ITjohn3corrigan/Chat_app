@@ -8,6 +8,7 @@
 import Foundation
 import Contacts
 import Firebase
+import FirebaseFirestoreSwift
 
 class DatabaseService {
     
@@ -29,9 +30,6 @@ class DatabaseService {
         let db = Firestore.firestore()
         
         // get the firts < ten phone numbers from the phone
-        let tenPhoneNumbers = Array(lookupphoneNumbers.prefix(10))
-        lookupphoneNumbers = Array(lookupphoneNumbers.dropFirst(10))
-        
         
         //remove the ten that we are looking up
         
@@ -40,22 +38,26 @@ class DatabaseService {
         while !lookupphoneNumbers.isEmpty {
             let tenPhoneNumbers = Array(lookupphoneNumbers.prefix(10))
             lookupphoneNumbers = Array(lookupphoneNumbers.dropFirst(10))
-
             
-            let query =  db.collection("users").whereField("phonenumber", in: tenPhoneNumbers)
-
+            
+            let query =  db.collection("users").whereField("phone", in: tenPhoneNumbers)
+            
             //retreive the users that are on the platform
+           
+            
+            
             
             query.getDocuments {snapshot, error in
                 
                 //check for errors
                 if error == nil && snapshot != nil  {
+                    
                     // for each document that was fetched create a user
                     for doc in snapshot!.documents {
-                    //for doc in snapshot!.documents {
+                        
                         
                         if let user =  try? doc.data(as: User.self)
-                            {
+                        {
                             
                             //append to the platform users array
                             platformUsers.append(user)
@@ -67,13 +69,14 @@ class DatabaseService {
                     if lookupphoneNumbers.isEmpty {
                         //return these users
                         completion(platformUsers)
-
+                        
                         
                     }
                     
                 }
                 
             }
+            
         }
                 
     }

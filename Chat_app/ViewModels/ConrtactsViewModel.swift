@@ -9,6 +9,7 @@ import Foundation
 import Contacts
 
 class ContactsViewModel: ObservableObject{
+    
     @Published var users = [User]()
     private var localContacts = [CNContact]()
     func getLocalContacts() {
