@@ -12,6 +12,8 @@ class ContactsViewModel: ObservableObject{
     
     @Published var users = [User]()
     private var localContacts = [CNContact]()
+    
+    
     func getLocalContacts() {
        
         DispatchQueue.init(label: "getcontacts").async {
@@ -21,7 +23,7 @@ class ContactsViewModel: ObservableObject{
                 //list of keys we want to get
                 let keys = [CNContactPhoneNumbersKey,
                             CNContactGivenNameKey,
-                            CNContactFamilyNameKey] as! [CNKeyDescriptor]
+                            CNContactFamilyNameKey] as [CNKeyDescriptor]
                 
                 //create a fetch request
                 let fetchRequest = CNContactFetchRequest(keysToFetch: keys)

@@ -8,7 +8,7 @@
 import Foundation
 import Contacts
 import Firebase
-import FirebaseFirestoreSwift
+
 
 class DatabaseService {
     
@@ -46,18 +46,16 @@ class DatabaseService {
            
             
             
-            
-            query.getDocuments {snapshot, error in
+            query.getDocuments { snapshot, error in
                 
-                //check for errors
-                if error == nil && snapshot != nil  {
+                // Check for errors
+                if error == nil && snapshot != nil {
                     
-                    // for each document that was fetched create a user
+                    // For each doc that was fetched, create a user
                     for doc in snapshot!.documents {
-                        
-                        
-                        if let user =  try? doc.data(as: User.self)
-                        {
+                   
+                        if let user = try? doc.data(as: User.self){
+                            
                             
                             //append to the platform users array
                             platformUsers.append(user)
